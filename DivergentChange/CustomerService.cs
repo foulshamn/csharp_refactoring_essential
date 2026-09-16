@@ -2,7 +2,7 @@
 
 public class CustomerService
 {
-    private readonly AccountService accountService = new AccountService();
+    private readonly AccountService _accountService = new AccountService();
     public EmailValidator EmailValidator { get; } = new();
 
     public string FormatDisplayName(string firstName, string lastName)
@@ -12,11 +12,11 @@ public class CustomerService
 
     public int CalculateLoyaltyPoints(int numberOfPurchases)
     {
-        return accountService.CalculateLoyaltyPoints(numberOfPurchases);
+        return _accountService.CalculateLoyaltyPoints(numberOfPurchases);
     }
 
     public string DetermineAccountStatus(int daysSinceLastLogin)
     {
-        return accountService.DetermineAccountStatus(daysSinceLastLogin);
+        return _accountService.DetermineAccountStatus(daysSinceLastLogin);
     }
 }
