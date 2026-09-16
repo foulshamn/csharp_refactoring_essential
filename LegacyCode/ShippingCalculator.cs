@@ -15,7 +15,7 @@ public class Order
 
 public class ShippingCalculator
 {
-    private readonly HttpClient _httpClient = new HttpClient();
+    private readonly OrderRequestHandler _orderRequestHandler = new OrderRequestHandler();
 
     public double CalculateShipping(int orderId)
     {
@@ -48,30 +48,7 @@ public class ShippingCalculator
 
     private Order? GetOrder(int orderId)
     {
-        var url = $"https://codemanship.co.uk/api/orders.php?orderId={orderId}";
-
-        var response = _httpClient
-            .GetAsync(url)
-            .GetAwaiter()
-            .GetResult();
-
-        response.EnsureSuccessStatusCode();
-
-        var json = response.Content
-            .ReadAsStringAsync()
-            .GetAwaiter()
-            .GetResult();
-
-        var options = new JsonSerializerOptions
-        {
-            PropertyNameCaseInsensitive = true
-        };
-            
-        var order = JsonSerializer.Deserialize<Order>(json, options);
-
-        if (order == null)
-            throw new Exception("Failed to deserialize order");
-        return order;
+        return _orderRequestHandler.GetOrder(orderId);
     }
 }
 
