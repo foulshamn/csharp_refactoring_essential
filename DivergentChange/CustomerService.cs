@@ -5,9 +5,7 @@ using System.Text.RegularExpressions;
 
 public class CustomerService
 {
-    private readonly EmailValidator _emailValidator = new EmailValidator();
-
-    public EmailValidator EmailValidator => _emailValidator;
+    public EmailValidator EmailValidator { get; } = new EmailValidator();
 
     public string FormatDisplayName(string firstName, string lastName)
     {
