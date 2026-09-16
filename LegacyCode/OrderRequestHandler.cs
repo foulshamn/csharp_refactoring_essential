@@ -2,7 +2,7 @@
 
 namespace LegacyCode;
 
-public class OrderRequestHandler
+public class OrderRequestHandler : IOrderRequestHandler
 {
     private readonly HttpClient _httpClient = new HttpClient();
 

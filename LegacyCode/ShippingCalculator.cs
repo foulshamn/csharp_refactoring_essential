@@ -17,6 +17,11 @@ public class ShippingCalculator
 {
     private readonly OrderRequestHandler _orderRequestHandler = new OrderRequestHandler();
 
+    public ShippingCalculator()
+    {
+        
+    }
+
     public double CalculateShipping(int orderId)
     {
         try
