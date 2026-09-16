@@ -20,4 +20,16 @@ public class Product
     {
         return onSale;
     }
+
+    public double CalculateFinalPrice()
+    {
+        double price = this.GetPrice();
+
+        if (this.IsOnSale())
+        {
+            price = price * 0.8;
+        }
+
+        return price;
+    }
 }

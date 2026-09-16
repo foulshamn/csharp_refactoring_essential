@@ -12,7 +12,7 @@ public class PriceCalculatorTests
     {
         Product product = new Product(100.0, true);
 
-        double result = calculator.CalculateFinalPrice(product);
+        double result = product.CalculateFinalPrice();
 
         Assert.AreEqual(80.0, result);
     }
@@ -22,7 +22,7 @@ public class PriceCalculatorTests
     {
         Product product = new Product(100.0, false);
 
-        double result = calculator.CalculateFinalPrice(product);
+        double result = product.CalculateFinalPrice();
 
         Assert.AreEqual(100.0, result);
     }
@@ -32,7 +32,7 @@ public class PriceCalculatorTests
     {
         Product product = new Product(0.0, true);
 
-        double result = calculator.CalculateFinalPrice(product);
+        double result = product.CalculateFinalPrice();
 
         Assert.AreEqual(0.0, result);
     }
