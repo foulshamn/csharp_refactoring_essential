@@ -14,43 +14,43 @@ public class CustomerServiceTest
     [Test]
     public void IsValidEmail_shouldReturnFalse_whenEmailIsNull()
     {
-        Assert.IsFalse(service.IsValidEmail(null));
+        Assert.IsFalse(service.EmailValidator.IsValidEmail(null));
     }
 
     [Test]
     public void IsValidEmail_shouldReturnFalse_whenEmailIsEmpty()
     {
-        Assert.IsFalse(service.IsValidEmail(""));
+        Assert.IsFalse(service.EmailValidator.IsValidEmail(""));
     }
 
     [Test]
     public void IsValidEmail_shouldReturnFalse_whenMissingAtSymbol()
     {
-        Assert.IsFalse(service.IsValidEmail("invalid.email.com"));
+        Assert.IsFalse(service.EmailValidator.IsValidEmail("invalid.email.com"));
     }
 
     [Test]
     public void IsValidEmail_shouldReturnFalse_whenMissingLocalPart()
     {
-        Assert.IsFalse(service.IsValidEmail("@domain.com"));
+        Assert.IsFalse(service.EmailValidator.IsValidEmail("@domain.com"));
     }
 
     [Test]
     public void IsValidEmail_shouldReturnFalse_whenMissingDomain()
     {
-        Assert.IsFalse(service.IsValidEmail("user@"));
+        Assert.IsFalse(service.EmailValidator.IsValidEmail("user@"));
     }
 
     [Test]
     public void IsValidEmail_shouldReturnTrue_whenEmailIsValid()
     {
-        Assert.IsTrue(service.IsValidEmail("user.name+tag@example.com"));
+        Assert.IsTrue(service.EmailValidator.IsValidEmail("user.name+tag@example.com"));
     }
 
     [Test]
     public void IsValidEmail_shouldReturnTrue_whenSimpleValidEmail()
     {
-        Assert.IsTrue(service.IsValidEmail("user@example.com"));
+        Assert.IsTrue(service.EmailValidator.IsValidEmail("user@example.com"));
     }
 
     // -------------------------
