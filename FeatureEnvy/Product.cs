@@ -11,16 +11,11 @@ public class Product
         this.onSale = onSale;
     }
 
-    public bool IsOnSale()
-    {
-        return onSale;
-    }
-
     public double CalculateFinalPrice()
     {
         double finalPrice = this.price;
 
-        if (this.IsOnSale())
+        if (this.onSale)
         {
             finalPrice = finalPrice * 0.8;
         }
