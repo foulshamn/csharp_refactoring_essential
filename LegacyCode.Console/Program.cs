@@ -18,7 +18,7 @@ public class ShippingApp
             return;
         }
 
-        var calculator = new ShippingCalculator();
+        var calculator = new ShippingCalculator(new OrderRequestHandler());
 
         try
         {

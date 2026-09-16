@@ -13,20 +13,13 @@ public class Order
     public bool Fragile { get; set; }
 }
 
-public class ShippingCalculator
+public class ShippingCalculator(IOrderRequestHandler orderRequestHandler)
 {
-    private readonly OrderRequestHandler _orderRequestHandler = new OrderRequestHandler();
-
-    public ShippingCalculator()
-    {
-        
-    }
-
     public double CalculateShipping(int orderId)
     {
         try
         {
-            var order = GetOrder(orderId);
+            var order = orderRequestHandler.GetOrder(orderId);
 
             switch (order.ShippingType)
             {
@@ -49,11 +42,6 @@ public class ShippingCalculator
             Console.WriteLine(e);
             return -1;
         }
-    }
-
-    private Order? GetOrder(int orderId)
-    {
-        return _orderRequestHandler.GetOrder(orderId);
     }
 }
 
