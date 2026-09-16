@@ -4,18 +4,12 @@ namespace DivergentChange;
 
 public class CustomerService
 {
-    private readonly AccountService _accountService = new AccountService();
+    private readonly AccountService _accountService = new();
+    private readonly EmailValidator _emailValidator = new();
 
     public bool IsValidEmail(string email)
     {
-        if (email == null)
-        {
-            return false;
-        }
-
-        return Regex.IsMatch(
-            email,
-            @"^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+        return _emailValidator.IsValidEmail(email);
     }
 
     public string FormatDisplayName(string firstName, string lastName)
