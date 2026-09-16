@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 
 public class CustomerService
 {
+    private readonly AccountService accountService = new AccountService();
     public EmailValidator EmailValidator { get; } = new EmailValidator();
 
     public string FormatDisplayName(string firstName, string lastName)
@@ -14,20 +15,11 @@ public class CustomerService
 
     public int CalculateLoyaltyPoints(int numberOfPurchases)
     {
-        return numberOfPurchases * 10;
+        return accountService.CalculateLoyaltyPoints(numberOfPurchases);
     }
 
     public string DetermineAccountStatus(int daysSinceLastLogin)
     {
-        if (daysSinceLastLogin > 365)
-        {
-            return "INACTIVE";
-        }
-        else if (daysSinceLastLogin > 30)
-        {
-            return "DORMANT";
-        }
-
-        return "ACTIVE";
+        return accountService.DetermineAccountStatus(daysSinceLastLogin);
     }
 }
