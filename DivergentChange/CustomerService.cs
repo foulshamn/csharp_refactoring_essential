@@ -6,6 +6,7 @@ public class CustomerService
 {
     private readonly AccountService _accountService = new();
     private readonly EmailValidator _emailValidator = new();
+    private readonly CustomerDisplayFormatter _customerDisplayFormatter = new CustomerDisplayFormatter();
 
     public bool IsValidEmail(string email)
     {
@@ -14,7 +15,7 @@ public class CustomerService
 
     public string FormatDisplayName(string firstName, string lastName)
     {
-        return firstName.Trim() + " " + lastName.Trim().ToUpper();
+        return _customerDisplayFormatter.FormatDisplayName(firstName, lastName);
     }
 
     public int CalculateLoyaltyPoints(int numberOfPurchases)
