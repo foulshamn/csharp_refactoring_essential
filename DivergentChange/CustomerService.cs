@@ -7,10 +7,7 @@ public class CustomerService
 {
     private readonly EmailValidator _emailValidator = new EmailValidator();
 
-    public EmailValidator EmailValidator
-    {
-        get { return _emailValidator; }
-    }
+    public EmailValidator EmailValidator => _emailValidator;
 
     public string FormatDisplayName(string firstName, string lastName)
     {
