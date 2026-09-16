@@ -4,7 +4,7 @@ namespace DivergentChange;
 
 public class EmailValidator
 {
-    public bool IsValidEmail(string email)
+    public static bool IsValidEmail(string email)
     {
         if (email == null)
         {
