@@ -6,7 +6,7 @@ using NUnit.Framework;
 public class CommentExerciseTest
 {
     [Test]
-    public void T1()
+    public void AccumulativeSumOfSquaresInRangeTest()
     {
         int lowerBound = 7;
         int b = 12;
