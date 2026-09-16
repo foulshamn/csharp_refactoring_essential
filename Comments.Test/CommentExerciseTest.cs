@@ -3,7 +3,7 @@
 using NUnit.Framework;
 
 [TestFixture]
-public class X1Test
+public class CommentExerciseTest
 {
     [Test]
     public void T1()
@@ -18,7 +18,7 @@ public class X1Test
             expected += i * i;
         }
 
-        int actual = X1.AccumulativeSumOfSquaresInRange(a, b);
+        int actual = CommentExercise.AccumulativeSumOfSquaresInRange(a, b);
 
         Assert.That(actual, Is.EqualTo(expected));
     }

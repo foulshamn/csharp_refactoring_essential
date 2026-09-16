@@ -1,6 +1,6 @@
 ﻿namespace Comments;
 
-public class X1
+public class CommentExercise
 {
     public static int AccumulativeSumOfSquaresInRange(int lowerBound, int upperBound)
     {
