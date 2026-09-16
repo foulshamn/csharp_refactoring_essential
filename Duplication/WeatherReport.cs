@@ -1,6 +1,5 @@
 ﻿namespace Duplication;
 
-using System;
 using System.Collections.Generic;
 
 public class WeatherReport

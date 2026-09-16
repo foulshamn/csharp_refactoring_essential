@@ -1,12 +1,9 @@
 ﻿namespace DivergentChange;
 
-using System;
-using System.Text.RegularExpressions;
-
 public class CustomerService
 {
     private readonly AccountService accountService = new AccountService();
-    public EmailValidator EmailValidator { get; } = new EmailValidator();
+    public EmailValidator EmailValidator { get; } = new();
 
     public string FormatDisplayName(string firstName, string lastName)
     {
