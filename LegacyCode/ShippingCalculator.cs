@@ -20,7 +20,6 @@ public class ShippingCalculator(IOrderRequestHandler orderRequestHandler)
         try
         {
             var order = orderRequestHandler.GetOrder(orderId);
-
             switch (order.ShippingType)
             {
                 case "STANDARD":

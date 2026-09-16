@@ -2,5 +2,5 @@
 
 public interface IOrderRequestHandler
 {
-    Order? GetOrder(int orderId);
+    Order GetOrder(int orderId);
 }
