@@ -8,17 +8,17 @@ public class CommentExerciseTest
     [Test]
     public void T1()
     {
-        int a = 7;
+        int lowerBound = 7;
         int b = 12;
 
         // Expected: sum of squares from 7 to 12
         int expected = 0;
-        for (int i = a; i <= b; i++)
+        for (int i = lowerBound; i <= b; i++)
         {
             expected += i * i;
         }
 
-        int actual = CommentExercise.AccumulativeSumOfSquaresInRange(a, b);
+        int actual = CommentExercise.AccumulativeSumOfSquaresInRange(lowerBound, b);
 
         Assert.That(actual, Is.EqualTo(expected));
     }
